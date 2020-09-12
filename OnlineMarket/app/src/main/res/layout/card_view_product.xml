@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:background="@drawable/custom_border"
+    android:padding="3dp"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:src="@drawable/default_product_image"
+            android:id="@+id/ivProductRecyclerView"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="Product"
+            android:paddingLeft="5dp"
+            android:id="@+id/tvNameRecyclerView"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="15000000đ"
+            android:paddingRight="5dp"
+            android:id="@+id/tvPriceRecyclerView"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#A60000"
+            android:gravity="right|center_vertical"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

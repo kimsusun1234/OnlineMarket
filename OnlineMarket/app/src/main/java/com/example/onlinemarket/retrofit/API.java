@@ -18,4 +18,6 @@ public interface API {
     //getProduct sẽ là hàm callback, trả về một ArrayList chứa danh sách các products
     Call<ArrayList<ProductModel>> getProduct();
 
+    //Class Call là để retrofit request lên server và lấy response trả về
+
 }

@@ -9,6 +9,7 @@ public class RetrofitClient {
     public static final String URL = "http://192.168.50.103:2020/";
     public static Retrofit retrofit;
 
+    //hàm này để trả về một đối tượng Retrofit đã được cấu hình và kết nối với database
     public static Retrofit getClient(){
 
         //cau hinh retrofit voi URL cua server

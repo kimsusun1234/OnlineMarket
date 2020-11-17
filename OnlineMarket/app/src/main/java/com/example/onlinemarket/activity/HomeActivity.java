@@ -49,14 +49,19 @@ public class HomeActivity extends AppCompatActivity {
 
         retrofitClient = new RetrofitClient();
 
-        //dùng đối tượng retrofitclient để truy cập đến địa chỉ URL, lấy API về và tạo ra một đối tượng mang kiểu API
+        //Đối tượng retrofitClient sẽ cấu hình và kết nối tới URL đã cho trước.
+        //create sẽ trả về một class có kiểu tương ứng với class truyền vào tham số
         API api = retrofitClient.getClient().create(API.class);
         //gọi hàm abstract getProduct trong api
-        //enqueue hinh nhu la de xu li bat dong bo
+        //getProduct sẽ trả về một đối tượng Call, gọi hàm enqueue() của Call để xử lí bất đồng bộ
+        //enqueue nhận một đối tượng interface CallBack làm tham số, và vì thế nên phải đi đè 2 phương thức của nó
+
         api.getProduct().enqueue(new Callback<ArrayList<ProductModel>>() {
             @Override
             public void onResponse(Call<ArrayList<ProductModel>> call, Response<ArrayList<ProductModel>> response) {
-
+                //sau khi Retrofit gọi được API thành công
+                //Hàm onResponse sẽ được gọi, trong đó có 2 tham số và response và call.
+                //respone sẽ chứa tất cả dữ liệu do server trả về
                 ArrayList<ProductModel> list = response.body();
 
                 for (int i = 0; i < list.size(); i++)
